@@ -10,3 +10,8 @@ Here is an overview of all projects, with a short description.
 
 A configurable, fancy transitioning border, using 4 divs in a div.
 All configuration is done with CSS variables, which allows for a couple of nice effects.
+
+### [Chaos whirl](./chaos-whirl)
+
+A seemingly chaotic configuration of moving balls that line up into various shapes,
+and move back into their starting position over time.
