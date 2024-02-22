@@ -1,0 +1,147 @@
+/* A Very minimal CSS reset. */
+
+* {
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+html,
+body {
+    width: 100%;
+    margin: 0;
+}
+
+body {
+    padding: 32px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 32px;
+}
+
+/* Configurable variables. */
+
+:root {
+    /* The border width. */
+    --border-size: 8px;
+
+    /* The transition duration per side. */
+    --duration: 0.25s;
+
+    /* Border colors. */
+    --background-top: linear-gradient(90deg, blue, purple);
+    --background-right: linear-gradient(purple, red);
+    --background-bottom: linear-gradient(270deg, red, orange);
+    --background-left: linear-gradient(blue, orange);
+
+    /* Transition delays, used for different effects. */
+    --delay-top: 0s;
+    --delay-right: 0s;
+    --delay-bottom: 0s;
+    --delay-left: 0s;
+
+    /* Reverse transition delays, when un-hovering. */
+    --delay-reverse-top: 0s;
+    --delay-reverse-right: 0s;
+    --delay-reverse-bottom: 0s;
+    --delay-reverse-left: 0s;
+}
+
+/* Variations. */
+
+.clockwise {
+    --delay-right: var(--duration);
+    --delay-bottom: calc(var(--duration) * 2);
+    --delay-left: calc(var(--duration) * 3);
+
+    --delay-reverse-bottom: var(--duration);
+    --delay-reverse-right: calc(var(--duration) * 2);
+    --delay-reverse-top: calc(var(--duration) * 3);
+}
+
+.hor-vert {
+    --delay-right: var(--duration);
+    --delay-left: var(--duration);
+
+    --delay-reverse-top: var(--duration);
+    --delay-reverse-bottom: var(--duration);
+}
+
+/* The actual styling. */
+
+.bordered {
+    /* This is the only attribute that is necessary for the borders. */
+    position: relative;
+
+    /* All of this is changeable. */
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    background: lightblue;
+    width: 300px;
+    height: 200px;
+}
+
+/* Everything below is for the borders. Anything you want to change can be done via the configuration. */
+
+.bordered > .border {
+    position: absolute;
+    transition-property: width, height;
+    transition-duration: var(--duration);
+}
+
+.bordered > .top {
+    background: var(--background-top);
+    left: 0;
+    top: 0;
+    height: var(--border-size);
+    width: 0;
+    transition-delay: var(--delay-reverse-top);
+}
+
+.bordered > .right {
+    background: var(--background-right);
+    right: 0;
+    top: 0;
+    height: 0;
+    width: var(--border-size);
+    transition-delay: var(--delay-reverse-right);
+}
+
+.bordered > .bottom {
+    background: var(--background-bottom);
+    right: 0;
+    bottom: 0;
+    height: var(--border-size);
+    width: 0;
+    transition-delay: var(--delay-reverse-bottom);
+}
+
+.bordered > .left {
+    background: var(--background-left);
+    left: 0;
+    bottom: 0;
+    height: 0;
+    width: var(--border-size);
+    transition-delay: var(--delay-reverse-left);
+}
+
+.bordered:hover > .top {
+    width: 100%;
+    transition-delay: var(--delay-top);
+}
+
+.bordered:hover > .right {
+    height: 100%;
+    transition-delay: var(--delay-right);
+}
+
+.bordered:hover > .bottom {
+    width: 100%;
+    transition-delay: var(--delay-bottom);
+}
+
+.bordered:hover > .left {
+    height: 100%;
+    transition-delay: var(--delay-left);
+}
