@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Trace animation</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+
+    <main>
+      <img src="./background.jpg" alt=""/>
+      <div class="maskContainer">
+        <svg viewBox="0 0 35 35" preserveAspectRatio="none">
+          <defs>
+            <mask id="mask">
+              <rect width="100%" height="100%" fill="white"/>
+              <path
+                  d="M -4 30 S 20 -4 13 2 S 7 26 3 32 C 12 16 21 21 16 32 C 19 27 23 26 27 21 C 27 25 20 36 27 31 C 40 28 43 21.6667 51 17 C 43.3333 14.6667 39 9 28 11 C 23 16 35 14 29 11"
+                  stroke="black"
+                  stroke-width="2"
+                  fill="none"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+              />
+            </mask>
+          </defs>
+          <rect width="100%" height="100%" fill="white" mask="url(#mask)"/>
+        </svg>
+      </div>
+    </main>
+
+    <main>
+      <div class="maskContainer">
+        <svg viewBox="0 0 35 35" preserveAspectRatio="none">
+          <path
+              d="M -4 30 S 20 -4 13 2 S 7 26 3 32 C 12 16 21 21 16 32 C 19 27 23 26 27 21 C 27 25 20 36 27 31 C 40 28 43 21.6667 51 17 C 43.3333 14.6667 39 9 28 11 C 23 16 35 14 29 11"
+              stroke="purple"
+              stroke-width="2"
+              fill="none"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+          />
+        </svg>
+      </div>
+    </main>
+
+  </body>
+</html>

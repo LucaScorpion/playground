@@ -15,3 +15,8 @@ All configuration is done with CSS variables, which allows for a couple of nice 
 
 A seemingly chaotic configuration of moving balls that line up into various shapes,
 and move back into their starting position over time.
+
+### [Trace animation](./trace-animation)
+
+An animation that reveals parts of an image, following an SVG path.
+Use https://yqnn.github.io/svg-path-editor to easily edit SVG paths.
